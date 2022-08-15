@@ -45,3 +45,13 @@ window.addEventListener('scroll', _.throttle(function() {
 }, 300));
 // _.throttle 없이 하면 화면이 스크롤 한 번할 때 몇 십번이나 함수가 실행됨
 // 300 : 0.3s를 의미 -> 일정 시간에 한 번씩만 함수가 실행되도록 하여 여러 번 우르르 실행되는 것을 방지
+
+// FADE
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7, 
+    // 0.7, 1.4, 2.1, 2.8
+    opacity: 1
+  });
+})
