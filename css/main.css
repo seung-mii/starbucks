@@ -134,7 +134,7 @@ header .sub-menu ul.menu li:first-child::before {
 }
 
 header .sub-menu ul.menu li a {
-  font-size: 12px;
+  font-size: 13px;
   padding: 11px 16px;
   display: block;
   color: #656565;
@@ -151,7 +151,7 @@ header .sub-menu .search {
 
 header .sub-menu .search input {
   width: 36px;
-  height: 34px;
+  height: inherit;
   padding: 4px 10px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -267,14 +267,16 @@ header .main-menu .item .item__contents .contents__texture {
 
 header .main-menu .item .item__contents .contents__texture h4 {
   color: #999;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 header .main-menu .item .item__contents .contents__texture p {
-  color: #669900;
+  color: #64a70b;
   margin: 4px 0 14px;
 }
 
+
+/* BADGES */
 header .badges {
   position: absolute;
   top: 132px;
@@ -347,6 +349,7 @@ header .badges .badge {
 .visual .fade-in {
   opacity: 0;
 }
+
 
 /* NOTICE */
 .notice .notice-line {
@@ -586,8 +589,8 @@ header .badges .badge {
 }
 
 .rewards .btn-group .btn.sign-up {
-  margin-right: 5px;
-  width: 110px;
+  margin-right: 10px;
+  /* width: 110px; */
 }
 
 .rewards .btn-group .btn.sign-in {
@@ -660,8 +663,32 @@ header .badges .badge {
   left: 150px;
 }
 
-.youtube .floating3 {
+
+/* SEASON PRODUCT */
+.season-product {
+  background-image: url("../images/season_product_bg.jpg");
+}
+
+.season-product .inner {
+  height: 400px;
+}
+
+.season-product .floating3 {
   position: absolute;
-  bottom: -200px;
+  top: -200px;
   right: 0;
+}
+
+.season-product .text-group {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+
+.season-product .text-group .title {
+  margin-bottom: 10px;
+}
+
+.season-product .text-group .description {
+  margin-bottom: 15px;
 }
