@@ -121,9 +121,3 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
-
-// Scene() : 특정한 요소를 감시하는 옵션을 지정해주는 메소드 -> 메소드체이닝 형태
-// setClassToggle() : 클래스 속성을 지정, Toggle(넣었다가 뺐다가)
-// addTo() : controller 내용 추가
-// ~ Hook : 뷰포트의 0.8 지점에 해당 요소가 걸리면 setClassToggle() 메소드 실행
-// 이미 span 태그는 인라인 요소라 수평정렬이 default이므로 수평정렬 요소를 따로 설정 안해줘도 됨 
