@@ -82,6 +82,18 @@ new Swiper('.promotion .swiper-container', {
   }
 });
 
+new Swiper('.awards .swiper-container', {
+  autoplay: true,   // 자동 재생 여부
+  loop: true,       // 반복 재생 여부
+  spaceBetween: 30, // 슬라이드 사이 여백
+  slidesPerView: 5, // 한 번에 보여줄 슬라이드 개수
+  // slidesPerGroup: 5, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
+  navigation: { 
+    prevEl: '.awards .swiper-prev', 
+    nextEl: '.awards .swiper-next' 
+  }
+})
+
 // PROMOTION
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
