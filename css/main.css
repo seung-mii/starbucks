@@ -5,7 +5,6 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
-  height: 6000px;
 }
 
 img {
@@ -491,6 +490,7 @@ header .badges .badge {
   left: 0;
   right: 0;
   margin: auto;
+  z-index: 0;
 }
 
 .notice .promotion .swiper-pagination {
@@ -997,4 +997,23 @@ footer .copyright {
 
 footer .logo {
   margin: 30px auto 0;
+}
+
+
+/* SCROLL TO TOP */
+#to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

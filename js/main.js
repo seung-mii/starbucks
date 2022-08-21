@@ -24,27 +24,38 @@ searchInputEl.addEventListener('blur', function() {
 
 // BADGES
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 // _.throttle(함수, 시간);
 window.addEventListener('scroll', _.throttle(function() {
   if(window.scrollY > 500) { 
-    // 배지 숨기기
     // gsap : JS 애니메이션을 처리하는 라이브러리
     // gsap.to(적용시킬 해당 요소, 지속시간, 옵션);
-    gsap.to(badgeEl, .6, {
+    gsap.to(badgeEl, .6, { // 배지 숨기기
       opacity: 0,
       display: 'none'
     });
+    gsap.to(toTopEl, .2, { // 스크롤 버튼 보이기
+      x: 0
+    });
   } else { 
-    // 배지 보이기
-    gsap.to(badgeEl, .6, {
+    gsap.to(badgeEl, .6, { // 배지 보이기
       opacity: 1,
       display: 'block'
+    });
+    gsap.to(toTopEl, .2, { // 스크롤 버튼 숨기기
+      x: 100
     });
   }
 }, 300));
 // _.throttle 없이 하면 화면이 스크롤 한 번할 때 몇 십번이나 함수가 실행됨
 // 300 : 0.3s를 의미 -> 일정 시간에 한 번씩만 함수가 실행되도록 하여 여러 번 우르르 실행되는 것을 방지
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, { // 페이지 위치를 최상단으로 0.7초 동안 이동
+    scrollTo: 0
+  })
+})
 
 // FADE
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -101,13 +112,11 @@ const promotionToggleBtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false;
 promotionToggleBtn.addEventListener('click', function() {
   isHidePromotion = !isHidePromotion
-  if(isHidePromotion) {
-    // 숨김 처리
+  if(isHidePromotion)  // 숨김 처리
     promotionEl.classList.add('hide');
-  } else {
-    // 보임 처리
+  else  // 보임 처리
     promotionEl.classList.remove('hide');
-  }
+  
 })
 
 // FLOATING
@@ -145,3 +154,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')       // 클래스 속성을 지정, Toggle(넣었다가 뺐다가)
     .addTo(new ScrollMagic.Controller()) // controller 내용 추가
 })
+
+// 올해가 몇 년도인지 계산
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
