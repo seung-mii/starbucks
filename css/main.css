@@ -532,6 +532,7 @@ header .badges .badge {
   z-index: 1;
   cursor: pointer;
   outline: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: .4s;
@@ -597,6 +598,7 @@ header .badges .badge {
 }
 
 .rewards .btn-group .btn.sign-in {
+  margin-top: 10px;
   width: 110px;
 }
 
@@ -875,6 +877,7 @@ header .badges .badge {
 .awards .swiper-container {
   width: 100%;
   height: 40px;
+  overflow: hidden;
 }
 
 .awards .swiper-prev,
