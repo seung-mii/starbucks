@@ -82,6 +82,7 @@ new Swiper('.promotion .swiper-container', {
   }
 });
 
+// 이미 span 태그는 인라인 요소라 수평정렬이 default이므로 수평정렬 요소를 따로 설정 안해줘도 됨 
 new Swiper('.awards .swiper-container', {
   autoplay: true,   // 자동 재생 여부
   loop: true,       // 반복 재생 여부
@@ -133,3 +134,14 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyEls = document.querySelectorAll('section.scroll-spy')
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic
+    .Scene({ // 특정한 요소를 감시하는 옵션을 지정해주는 메소드 -> 메소드체이닝 형태
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8 // 뷰포트의 0.8 지점에 해당 요소가 걸리면 setClassToggle() 메소드 실행
+    })
+    .setClassToggle(spyEl, 'show')       // 클래스 속성을 지정, Toggle(넣었다가 뺐다가)
+    .addTo(new ScrollMagic.Controller()) // controller 내용 추가
+})
