@@ -391,6 +391,7 @@ header .badges .badge {
 
 .notice .notice-line .inner__left h2 {
   color: #fff;
+  width: 200px;
   font-size: 17px;
   font-weight: 700;
   margin-right: 20px;
@@ -423,6 +424,7 @@ header .badges .badge {
 .notice .notice-line .inner__left .notice-line__more .material-symbols-outlined {
   color: #fff;
   font-size: 30px;
+  padding-right: 20px;
 }
 
 .notice .notice-line .inner__right {
